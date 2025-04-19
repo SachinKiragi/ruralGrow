@@ -1,94 +1,110 @@
-.create-room-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background: linear-gradient(135deg, #007bff, #6c757d);
-    font-family: Arial, sans-serif;
-    padding: 2rem;
-    color: white; /* Ensures text is readable on the gradient */
-}
+/* CreateRoom.css */
 
-.project-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    color: #ffffff;
-}
-
-.description {
-    font-size: 1.2rem;
-    text-align: center;
-    margin-bottom: 2rem;
-    color: #f8f9fa;
-    max-width: 600px;
-}
-
-.form-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 2rem;
-}
-
-.room-input {
-    width: 300px;
-    padding: 0.8rem;
-    margin-bottom: 1rem;
-    font-size: 1rem;
-    border: 1px solid #ced4da;
-    border-radius: 5px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.button-group {
-    display: flex;
-    gap: 1rem;
-}
-
-.action-button {
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
-    font-weight: bold;
-    color: white;
-    background-color: #0056b3;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.action-button:hover {
-    background-color: #003d82;
-}
-
-.features-container {
-    text-align: center;
-    margin-top: 2rem;
-}
-
-.features-title {
-    font-size: 1.8rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    color: #ffffff;
-}
-
-.features-list {
-    list-style: none;
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a365d, #2c5282);
+    margin: 0;
     padding: 0;
-    font-size: 1.2rem;
-    color: #f8f9fa;
-}
-
-.features-list li {
-    margin: 0.5rem 0;
-}
-
-.footer {
-    margin-top: 2rem;
+    min-height: 100vh;
+  }
+  
+  .create-room-container {
+    max-width: 650px;
+    margin: 3rem auto;
+    padding: 2.5rem;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    /* border: 2px solid red; */
+    position: absolute;
+    top: 44%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .project-title {
     text-align: center;
+    font-size: 2rem;
+    color: #1a365d;
+    margin-bottom: 1.2rem;
+  }
+  
+  .description {
     font-size: 1rem;
-    color: #f8f9fa;
-}
+    text-align: center;
+    color: #444;
+    margin-bottom: 2rem;
+  }
+  
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .room-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 2px solid #cce0dc;
+    border-radius: 12px;
+    outline: none;
+    transition: 0.3s ease;
+  }
+  
+  .room-input:focus {
+    border-color: #1a365d;
+    box-shadow: 0 0 0 3px rgba(26, 54, 93, 0.2);
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+  }
+  
+  .action-button {
+    flex: 1;
+    padding: 0.75rem;
+    margin: 0 0.5rem;
+    font-size: 1rem;
+    background-color: #1a365d;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .action-button:hover {
+    background-color: #142b4a;
+  }
+  
+  .features-container {
+    margin-top: 2rem;
+    background-color: #f0f4f8;
+    padding: 1.5rem;
+    border-radius: 16px;
+  }
+  
+  .features-title {
+    font-size: 1.4rem;
+    color: #1a365d;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .features-list {
+    list-style: none;
+    padding-left: 0;
+    color: #444;
+    font-size: 1rem;
+  }
+  
+  .features-list li {
+    padding: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  

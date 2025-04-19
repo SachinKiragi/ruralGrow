@@ -4,6 +4,7 @@ import Peer from "simple-peer";
 import styled from "styled-components";
 import Gemini from "../components/Gemini";
 import { useEmail } from "../context/EmailContext";
+import { useParams } from "react-router-dom";
 
 const Wrapper = styled.div`
   display: flex;
@@ -15,7 +16,7 @@ const Wrapper = styled.div`
 `;
 
 const Container = styled.div`
-  flex: 0 0 65%;
+  flex: 0 0 70%;
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
@@ -29,8 +30,9 @@ const Container = styled.div`
 `;
 
 const MessageBox = styled.div`
-  flex: 0 0 25%;
-  max-height: 100vh;
+  flex: 0 0 30%;
+  max-height: 90%;
+  width: 7rem;
   overflow: hidden;
   position: relative;
   padding: 0;
@@ -151,7 +153,7 @@ const Room = (props) => {
   var peersRef = useRef([]);
   const [messages, setMessages] = useState([]);
   const [inputMessage, setInputMessage] = useState("");
-  const roomID = props.match.params.roomID;
+  const roomID = useParams()
   const [isGeminiOpen, setIsGeminiOpen] = useState(0);
 
   const {emailInContext, setEmailInContext} = useEmail();
@@ -334,7 +336,7 @@ const Room = (props) => {
     window.localStorage.setItem("myEmail", myEmail); // Restore the myEmail value
     console.log("Restored myEmail:", window.localStorage.getItem("myEmail"));
 
-    window.location.href = `/home`;
+    window.location.href = `/`;
   }
 
   function handleEnter(e){
@@ -394,7 +396,7 @@ function handleEnterForUserName(e){
   }, [messages]);
 
   return (
-    <div>
+    <div style={{border:'2px solid #1a365d', maxWidth:'100vw', maxHeight:'100vh'}}>
 
       <GlowingButton onClick={()=>setIsGeminiOpen(prev => !prev)}>{isGeminiOpen ? "CloseGemini" : "AskGemini"}</GlowingButton>
       <LeaveButton onClick={leaveRoom}>Leave room</LeaveButton>
@@ -403,7 +405,7 @@ function handleEnterForUserName(e){
         userWhoJoined && <h3 style={{position:'absolute', bottom:'1.8rem', left:'50rem'}}>{userWhoJoined} Joined</h3>
       }
 
-      <Wrapper style={{display:'flex', gap:'2rem', justifyContent:'space-between'}}>
+      <Wrapper style={{display:'flex', gap:'1rem', width:'98%', justifyContent:'space-between', backgroundColor:'#1a365d'}}>
         <Container style={{maxWidth:'100%',}}>
           <StyledVideo muted ref={userVideo} autoPlay playsInline />
           {peers.map((peer, index) => <Video key={index} peer={peer} />)}
